@@ -1,0 +1,16 @@
+<h3>Double Shot of News:</h3>
+<ul id="nav-secondary">
+  <% count = 0 %>
+  <% @news.each do |n| %>
+    <% count = count + 1 %>
+    <li class="active <% if count == 1 %>first <% end %>"><a href="#"><%= n.name %></a>
+      <% if n.articles.count > 0 %>
+        <ul>
+          <% for article in n.articles[0..4] %>
+          <li><a target="_blank" href="<%= article.url %>"><%= article.title %></a></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

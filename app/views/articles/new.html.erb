@@ -1,0 +1,34 @@
+<h1>New article</h1>
+
+<%= form_for(@article) do |f| %>
+  <%= f.error_messages %>
+  
+  <p>
+    <%= f.label :newspaper %><br />
+    <%# f.text_field :newspaper, :size => 20 %>
+    <%= select ("newspaper", "id", @newspapers.map {|u| [u.name,u.id]}) %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :size => 100 %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url, :size => 100 %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+    <%# textile_editor 'content', :content -%>
+  </p>
+  <p>
+    <%= f.label :printed_date %><br />
+    <%= f.datetime_select :printed_date %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+<%# textile_editor_initialize -%>
+
+<%= link_to 'Back', articles_path %>

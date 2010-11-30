@@ -1,0 +1,20 @@
+<h1>Log In</h1>
+
+<%= form_tag session_path do -%>
+<div><%= label_tag 'login' %><div/>
+<div><%= text_field_tag 'login', @login %></div>
+
+<div><%= label_tag 'password' %></div>
+<div><%= password_field_tag 'password', nil %></div>
+
+<!-- Uncomment this if you want this functionality -->
+<div><%= label_tag 'remember_me', 'Remember me' %>
+<div style="float:left;"><%= check_box_tag 'remember_me', '1', @remember_me %></div>
+
+<div><%= submit_tag 'Log in' %></div>
+<% end -%>
+
+<p>or login with Facebook connect</p>
+<%= fb_login_button('window.location = "/users/link_user_accounts";')%>
+
+
