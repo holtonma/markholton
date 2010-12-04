@@ -17,7 +17,6 @@ gem 'bson_ext'  #C extension for handling json
 gem "cancan"
 gem "texticle"
 gem "RedCloth", ">=4.0", :require => 'redcloth'  
-gem "taps"
 
 # To use debugger (not working for ruby 1.9.* yet)
 #gem 'ruby-debug'
