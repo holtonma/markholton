@@ -35,7 +35,7 @@
       
   	  <div id="columns">  
   	    <%= render :partial => "center_column" %>
-  		  <%= render "layouts/sidebar" %>
+  	    <% unless controller_name == "portfolios"%><%= render "layouts/sidebar" %><% end %>
   		  <div class="fix"></div>
   	  </div> <!--/columns -->
     
