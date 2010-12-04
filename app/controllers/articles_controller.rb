@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
-  acts_as_iphone_controller
+  #acts_as_iphone_controller
   
   def index
     
