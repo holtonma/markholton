@@ -25,14 +25,8 @@
   <div id="background">
     <div id="page">
       <div id="header">
-        <div id="logo">
-          <h1>
-            <a href="/"><%= image_tag("logo.png", :alt => "MarkHolton.com") %></a></h1>			
-  			    <p id="description">Mark Holton's weblog 
-  			      <a href="posts/?page_id=" title="Read more...">Read more &#187;</a>
-  			    </p>
-  		  </div> <!--/logo-->
-		  
+        
+		    <%= render 'layouts/logo_block' %>
   		  <%= yield %>
 		  
   		  <%= render :partial => "menu", :locals => { :active => "home" } %>

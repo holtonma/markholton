@@ -13,7 +13,7 @@
   <!--
   <script type='text/javascript' src='jquery.js?ver=1.4.2'></script>
   -->
-  <%= stylesheet_link_tag 'calendar' %>
+  <%# stylesheet_link_tag 'calendar' %>
   <%= stylesheet_link_tag 'blue' %>
   <%= stylesheet_link_tag 'custom' %>
 
@@ -25,36 +25,21 @@
   <div id="background">
     <div id="page">
       <div id="header">
-        <div id="logo">
-          <h1>
-            <a href="/"><%= image_tag("logo.png", :alt => "MarkHolton.com") %></a></h1>			
-  			    <p id="description">
-  			      <p>
-  			        Hi, I'm <strong>Mark Holton</strong>
-  			        -- a security savvy REST, Ruby, JavaScript, Rails, and Ajax practitioner. 
-  			        I am in the process of earning an M.S. in Computer, Network, and Information Security.  
-  			        <p class="quote"><i>"Focus on the core things that do not change"</i></p>
-  			      </p>
-  			      <a href="posts/?page_id=" title="Read more...">Read more &#187;</a>
-  			    </p>
-  		  </div> <!--/logo-->
-		  
+        <%= render "layouts/logo_block" %>
+		    
   		  <%= yield %>
-		  
-  		  <%= render :partial => "menu", :locals => { :active => "home" } %>
-        <%= render :partial => "featured_portfolio" %>
+		    
+		    <%= render :partial => "layouts/menu", :locals => { :active => controller_name } %>
+        <%= render "layouts/featured_portfolio" %>
       </div> <!--/header -->    
       
   	  <div id="columns">  
   	    <%= render :partial => "center_column" %>
-	    
-  		  <%= render :partial => "sidebar" %>
-	
+  		  <%= render "layouts/sidebar" %>
   		  <div class="fix"></div>
   	  </div> <!--/columns -->
     
-      <%= render :partial => "footer" %>
-    
+      <%= render "layouts/footer" %>
   	</div><!--/page -->
   </div><!-- /#background -->
 </body>
