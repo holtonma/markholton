@@ -1,0 +1,17 @@
+<div id="centercol">
+  <div class="wrap prev-entries">
+  	<h2>BLOG ENTRIES</h2>
+  </div>
+  <% @posts.each do |post| %>
+    <div class="headline">
+      <h3><a href="/posts/<%= post.id %>" rel="bookmark" title="<%= post.title %>"><%= post.title %></a></h3>
+      <div class="comment">
+        <a href="/posts/<%= post.id %>" title="<%= post.title %>"><%= post.comments.length %></a>
+      </div>
+      <div class="date"><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</div>
+      <div><%= post.content.html_safe %></div>
+    </div> <!--/ .headline -->
+  <% end %>
+         
+  <div class="ar"><a href="?page_id=">READ MORE IN THE ARCHIVES</a></div>    
+</div> <!--/centercol -->

@@ -27,14 +27,14 @@
       <div id="header">
         <%= render "layouts/logo_block" %>
 		    
-  		  <%= yield %>
-		    
 		    <%= render :partial => "layouts/menu", :locals => { :active => controller_name } %>
         <%= render "layouts/featured_portfolio" %>
       </div> <!--/header -->    
       
   	  <div id="columns">  
-  	    <%= render :partial => "center_column" %>
+  	    <%# render :partial => "center_column" %>
+  	    <%= yield %>
+        
   	    <% unless controller_name == "portfolios"%><%= render "layouts/sidebar" %><% end %>
   		  <div class="fix"></div>
   	  </div> <!--/columns -->

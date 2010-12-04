@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  layout "home"
+  layout "application"
   
   before_filter :find_post,
     :only => [:show, :edit, :update, :destroy]
@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all(:order => 'updated_at DESC')
+    @posts = Post.all(:order => 'updated_at DESC', :limit =>10)
     @news = Newspaper.all(:include => [:articles], :order => "articles.printed_date DESC")
     
     respond_to do |format|
@@ -20,8 +20,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
-    @user = current_user 
-    @news = Newspaper.all(:include => [:articles], :order => "articles.printed_date DESC")
+    #@user = current_user 
+    #@news = Newspaper.all(:include => [:articles], :order => "articles.printed_date DESC")
     
     respond_to do |format|
       format.html # show.html.erb
