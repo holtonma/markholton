@@ -6,16 +6,17 @@ atom_feed do |feed|
   
   @posts.each do |post|
     feed.entry(post) do |entry| 
-      entry.title "Blog: #{post.title}"
+      entry.title "#{post.title}"
       entry.content :type => 'xhtml' do |xhtml|
         xhtml.table do 
           xhtml.tr do
             xhtml.th 'content'
           end 
           xhtml.tr do 
-            xhtml.td post.content.html_safe 
+            xhtml.td Sanitize.clean(post.content.html_safe)
+            #post.content.html_safe 
           end 
-          xhtml.p "check out RedGrind.com"
+          xhtml.p "post by Mark Holton"
         end
       end
     end
