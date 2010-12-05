@@ -6,15 +6,13 @@ atom_feed do |feed|
   
   @posts.each do |post|
     feed.entry(post) do |entry| 
-      entry.title "Post: #{post.title}"
+      entry.title "Blog: #{post.title}"
       entry.content :type => 'xhtml' do |xhtml|
         xhtml.table do 
           xhtml.tr do
-            xhtml.th 'Title' 
             xhtml.th 'content'
           end 
           xhtml.tr do 
-            xhtml.td post.title 
             xhtml.td post.content.html_safe 
           end 
           xhtml.p "check out RedGrind.com"
