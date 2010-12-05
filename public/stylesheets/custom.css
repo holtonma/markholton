@@ -117,11 +117,12 @@ dd {
 a.continue {
   padding-left:20px;
   color: #3A4C5A;
+  display:block;
 }
 
-h2.articles {
+h2.articles a{
 	color:#314152;
-	font-size:14px;
+	font-size:16px;
 	font-weight:bold;
 }
 

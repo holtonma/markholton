@@ -4,7 +4,7 @@ Style: blue
 
 body{ background: url(/images/bgr-tile.jpg) #f1f1e9 repeat-x top; color: #555555; }
 #background { background: url(/images/bgr.jpg) no-repeat top center; }
-a{ color: #aaaaaa; }
+a{ color: #777; }
 a:hover{}
 input,select,textarea{ border: #999999 1px solid; }
 #header{ color: #d8d8d8; }
