@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
   #acts_as_iphone_controller
+  layout 'application'
   
   def index
     
@@ -17,7 +18,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
-      format.iphone # index.iphone.erb
+      #format.iphone # index.iphone.erb
     end
   end
 
@@ -29,7 +30,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @article }
-      format.iphone # show.iphone.erb
+      #format.iphone # show.iphone.erb
     end
   end
 

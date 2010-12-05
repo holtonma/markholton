@@ -113,3 +113,22 @@ dd {
   display: none;
 }
 /* ...hresume */
+
+a.continue {
+  padding-left:20px;
+  color: #3A4C5A;
+}
+
+h2.articles {
+	color:#314152;
+	font-size:14px;
+	font-weight:bold;
+}
+
+div#centercol p.article {
+	color: #080000;
+	/*font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 16px;*/
+	margin: 3px 2px;
+	text-align: left;
+}
