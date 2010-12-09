@@ -39,8 +39,9 @@ test:
   encoding: unicode
   database: MarkHolton_test
   pool: 5
-  username: MarkHolton
-  password: scramjet
+  min_messages: warning #stop squawking NOTICE at me, PostgreS
+  #username: MarkHolton
+  #password: scramjet
 
 production:
   adapter: postgresql

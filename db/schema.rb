@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20100406070445) do
     t.text     "content"
   end
 
-  add_index "articles", [nil], :name => "articles_fts_idx"
+  # add_index "articles", [nil], :name => "articles_fts_idx"
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"

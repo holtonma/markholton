@@ -1,24 +1,31 @@
-MarkholtonRails3::Application.routes.draw do |map|
+Markholton::Application.routes.draw do
   # map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   #   map.login '/login', :controller => 'sessions', :action => 'new'
   #   map.register '/register', :controller => 'users', :action => 'create'
   #   map.signup '/signup', :controller => 'users', :action => 'new'
   #   
-  map.resources :users, :collection => {:link_user_accounts => :get}
-  map.resource  :session
-  map.resources :articles
-  map.resources :posts, :has_many => :comments
-  map.resources :newspapers, :has_many => :articles
-  map.resources :portfolios
+  # map.resources :users, :collection => {:link_user_accounts => :get}
+  resources  :session
+  resources :articles
+  
+  resources :posts do
+    resources :comments
+  end
+  
+  resources :newspapers do
+    resources :articles
+  end
+  
+  resources :portfolios
   
   #get 'home/index' #, :controller => 'home', :action => 'index'
   #get '/test', :controller => 'test', :action => 'index'
-  get 'about/index', :controller=> 'about', :action => 'index'
+  match 'about'   => 'about#index'
   #map.resource :about
   
-  map.signup '/signup', :controller => 'users', :action => 'new'
-  map.login  '/login',  :controller => 'sessions', :action => 'new'
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  #map.signup '/signup', :controller => 'users', :action => 'new'
+  #map.login  '/login',  :controller => 'sessions', :action => 'new'
+  #map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   #   
   #map.root :home
   

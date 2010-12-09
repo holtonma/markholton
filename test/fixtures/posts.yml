@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  title: MyString
-  content: MyText
+  name: Mark Holton
+  title: Post Uno
+  content: so what's up there dood
 
 two:
-  name: MyString
-  title: MyString
-  content: MyText
+  name: Markus Holtonus
+  title: Love Rails
+  content: i <3 Rails.  It makes me productive

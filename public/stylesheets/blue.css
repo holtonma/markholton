@@ -61,3 +61,8 @@ input, select, textarea { border:1px solid #e6e6e6; }
 	
 }
 #nav1 li a:hover span{ background: #2B3846; }
+
+/* form errors */
+div.errorExplanation {color:#660000;}
+div#errorExplanation h2 {color:#770000;font-weight:bold;}
+div#errorExplanation ul li {list-style-type: circle;}

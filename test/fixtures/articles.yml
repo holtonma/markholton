@@ -2,12 +2,14 @@
 
 one:
   newspaper_id: 1
-  title: MyString
-  url: MyString
+  title: this is an article
+  url: Mad Men Season 1
+  content: this is the content of the first article
   printed_date: 2009-10-30 23:41:01
 
 two:
   newspaper_id: 1
-  title: MyString
-  url: MyString
+  title: Dexter Season 5
+  url: http://foobar.com/blah
   printed_date: 2009-10-30 23:41:01
+  content: Trinity was a beast

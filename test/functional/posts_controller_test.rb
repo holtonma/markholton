@@ -6,7 +6,34 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil assigns(:posts)
   end
-
+  
+  test "index should have menu" do
+    get :index
+    assert_response :success
+    
+    # four options
+    assert_select 'div#nav1 ul' do
+      assert_select 'li', 4
+    end
+    # no menu option on Posts#index
+    # 4 options should not be current 
+    assert_select 'div#nav1 ul' do
+      assert_select 'li.page_item', 4
+    end
+    
+  end
+  
+  test "posts#index should show no more than 10 posts at a time" do
+    get :index
+    assert_response :success
+    
+    assert_select 'div#centercol' do
+      assert_select 'h4', 10
+      assert_select 'hr', 10
+    end
+    
+  end
+  
   test "should get new" do
     get :new
     assert_response :success
@@ -14,7 +41,11 @@ class PostsControllerTest < ActionController::TestCase
 
   test "should create post" do
     assert_difference('Post.count') do
-      post :create, :post => { }
+      post :create, :post => { 
+        :title   => posts(:one).title, 
+        :content => posts(:one).content,
+        :name    => posts(:one).name 
+      }
     end
 
     assert_redirected_to post_path(assigns(:post))

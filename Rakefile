@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-MarkholtonRails3::Application.load_tasks
+Markholton::Application.load_tasks
