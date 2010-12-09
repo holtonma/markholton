@@ -2,9 +2,12 @@ class PostsController < ApplicationController
   
   layout "application"
   
+  before_filter :authenticate_user!, :only => [:new, :edit, :update, :destroy]
+  
   before_filter :find_post,
     :only => [:show, :edit, :update, :destroy]
-    
+  
+   
   # GET /posts
   # GET /posts.xml
   def index
