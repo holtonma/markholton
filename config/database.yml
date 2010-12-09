@@ -46,7 +46,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: MarkHolton_production
+  database: MarkHolton_development #production
   pool: 5
-  username: MarkHolton
+  username: postgres
   password: scramjet
