@@ -38,8 +38,28 @@ class PostsControllerTest < ActionController::TestCase
     get :new
     assert_response :success
   end
-
-  test "should create post" do
+  
+  test "should have a link to read more that points to About" do
+    get :index
+    assert_response :success
+    
+    assert_select "div#logo a[href$=#{about_path}]"
+  end
+  
+  test "should not create post if missing title" do
+    assert_no_difference('Post.count') do
+      post :create, :post => {
+        :title   => '',
+        :content => posts(:one).content,
+        :name    => posts(:one).name
+      }
+    end
+    
+    assert_response :success #HTTP 200
+    assert_template :new
+  end
+  
+  test "should create post if all the required params are there" do
     assert_difference('Post.count') do
       post :create, :post => { 
         :title   => posts(:one).title, 
