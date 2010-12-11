@@ -22,11 +22,6 @@ ActiveRecord::Schema.define(:version => 20101209060157) do
     t.text     "content"
   end
 
-<<<<<<< HEAD
-  # add_index "articles", [nil], :name => "articles_fts_idx"
-
-=======
->>>>>>> devise
   create_table "comments", :force => true do |t|
     t.string   "commenter"
     t.text     "body"
