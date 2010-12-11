@@ -39,7 +39,7 @@ test:
   encoding: unicode
   database: MarkHolton_test
   pool: 5
-  username: MarkHolton
+  username: postgres
   password: scramjet
 
 production:
