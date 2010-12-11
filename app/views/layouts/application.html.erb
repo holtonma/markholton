@@ -33,6 +33,9 @@
       
   	  <div id="columns">  
   	    <%# render :partial => "center_column" %>
+  	    <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        
   	    <%= yield %>
         
   	    <% unless controller_name == "portfolios"%><%= render "layouts/sidebar" %><% end %>

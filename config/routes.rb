@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 Markholton::Application.routes.draw do
+=======
+MarkholtonRails3::Application.routes.draw do |map|
+  devise_for :users
+
+>>>>>>> devise
   # map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   #   map.login '/login', :controller => 'sessions', :action => 'new'
   #   map.register '/register', :controller => 'users', :action => 'create'
