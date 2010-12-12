@@ -38,7 +38,9 @@
         
   	    <%= yield %>
         
-  	    <% unless controller_name == "portfolios"%><%= render "layouts/sidebar" %><% end %>
+  	    <% unless controller_name == "portfolios" || controller_name == "posts" %>
+  	      <%= render "layouts/sidebar" %>
+  	    <% end %>
   		  <div class="fix"></div>
   	  </div> <!--/columns -->
     

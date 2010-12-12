@@ -66,3 +66,25 @@ input, select, textarea { border:1px solid #e6e6e6; }
 div.errorExplanation {color:#660000;}
 div#errorExplanation h2 {color:#770000;font-weight:bold;}
 div#errorExplanation ul li {list-style-type: circle;}
+
+div#blog_post h2 {
+	font-size:16px;
+	font-weight:bold;
+	padding: 10px 0 3px;
+}
+div#blog_post {
+	background:white;
+	padding: 0 20px;
+	color:black;
+}
+div#blog_post p{
+	font-size:15px;
+	background-color:white;
+	display:block;
+	font-family: helvetica, arial, clean, sans-serif;
+	font-style: normal;
+	margin: 14px 0;
+	text-align: justify;
+}
+div#blog_post p#notice {padding:0;margin:0;}
+div#blog_post p#alert  {padding:0;margin:0;}
