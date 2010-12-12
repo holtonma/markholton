@@ -8,4 +8,9 @@ class Post < ActiveRecord::Base
     :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? } }
     
   acts_as_textiled :content
+  
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
+  
 end

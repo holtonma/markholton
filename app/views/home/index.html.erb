@@ -12,10 +12,8 @@
 	      <%= @posts.first.comments.length %>
 	    </a>
 	  </div>
-	  <h3>
-	    <a href="/posts/<%= @posts.first.id %>" rel="bookmark" 
-	    title="<%= @posts.first.title %>"><%= @posts.first.title %></a>
-	  </h3>
+	  <h3><%= link_to @posts.first.title, post_path(@posts.first.to_param), :rel => "bookmark" %></h3>
+    
 	  <div class="date">
 	    <%= distance_of_time_in_words(@posts.first.created_at, Time.now) %> ago
 	  </div>
@@ -32,9 +30,9 @@
 <% @posts.each do |post| %>
   <% if i > 0 %>
     <div class="headline">
-      <h3><a href="/posts/<%= post.id %>" rel="bookmark" title="<%= post.title %>"><%= post.title %></a></h3>
+      <h3><%= link_to post.title, post_path(post.to_param) %></h3>
       <div class="comment">
-        <a href="/posts/<%= post.id %>" title="<%= post.title %>"><%= post.comments.length %></a>
+        <a href="/posts/<%= post.to_param %>" title="<%= post.title %>"><%= post.comments.length %></a>
       </div>
       <div class="date"><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</div>
     </div> <!--/ .headline -->
