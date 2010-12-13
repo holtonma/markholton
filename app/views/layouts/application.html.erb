@@ -38,7 +38,7 @@
         
   	    <%= yield %>
         
-  	    <% unless controller_name == "portfolios" || controller_name == "posts" %>
+  	    <% unless ["portfolios", "posts", "articles"].include?(controller_name) %>
   	      <%= render "layouts/sidebar" %>
   	    <% end %>
   		  <div class="fix"></div>
