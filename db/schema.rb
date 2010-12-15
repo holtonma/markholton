@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101209060157) do
+ActiveRecord::Schema.define(:version => 20101215201103) do
 
   create_table "articles", :force => true do |t|
     t.integer  "newspaper_id"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(:version => 20101209060157) do
     t.text     "content"
   end
 
-  # add_index "articles", [nil], :name => "articles_fts_idx"
   create_table "comments", :force => true do |t|
     t.string   "commenter"
     t.text     "body"
@@ -30,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20101209060157) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
 
   create_table "newspapers", :force => true do |t|
     t.string   "name"
@@ -47,12 +48,16 @@ ActiveRecord::Schema.define(:version => 20101209060157) do
     t.datetime "updated_at"
   end
 
+  add_index "posts", ["id"], :name => "index_posts_on_id", :unique => true
+
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tags", ["post_id"], :name => "index_tags_on_post_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
