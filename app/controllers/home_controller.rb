@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def index
     @posts = Post.all(:include => [:comments], 
                        :order => 'posts.updated_at DESC',
-                       :limit => 10)
+                       :limit => 5)
     @news = Newspaper.all(:include => [:articles], :order => "articles.printed_date DESC")
     
     respond_to do |format|

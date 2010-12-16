@@ -12,6 +12,7 @@ Markholton::Application.routes.draw do
   resources :posts do
     resources :comments
   end
+  match 'grab_next' => 'posts#grab_next_n'
   
   resources :newspapers do
     resources :articles
@@ -22,6 +23,7 @@ Markholton::Application.routes.draw do
   #get 'home/index' #, :controller => 'home', :action => 'index'
   #get '/test', :controller => 'test', :action => 'index'
   match 'about'   => 'about#index'
+  
   #map.resource :about
   
   #map.signup '/signup', :controller => 'users', :action => 'new'

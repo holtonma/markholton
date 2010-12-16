@@ -94,6 +94,28 @@ class PostsController < ApplicationController
     end
   end
   
+  def grab_next_n
+    #=> posts/grab_next?n=5&id=7
+    if params[:n] == nil
+      num_rows = 5
+    else
+      num_rows = params[:n]
+    end
+    
+    if params[:id] == nil
+      max_id = 5
+    else
+      max_id = params[:id]
+    end
+        
+    @posts = Post.where("id < ?", max_id).order("id DESC").limit(num_rows)
+    if request.xhr?
+      render :partial => "posts/grab_next", :locals => { :posts => @posts }, :layout => false
+    else 
+      render :partial => "posts/grab_next", :locals => { :posts => @posts }, :layout => false
+    end
+  end
+  
   private 
     def find_post
       @post = Post.find(params[:id])

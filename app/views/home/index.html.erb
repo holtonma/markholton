@@ -26,20 +26,27 @@
 <div class="wrap prev-entries">
 	<h2>PREVIOUS ENTRIES</h2>
 </div>
-<% i = 0 %>
-<% @posts.each do |post| %>
-  <% if i > 0 %>
-    <div class="headline">
-      <h3><%= link_to post.title, post_path(post.to_param) %></h3>
-      <div class="comment">
-        <a href="/posts/<%= post.to_param %>" title="<%= post.title %>"><%= post.comments.length %></a>
-      </div>
-      <div class="date"><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</div>
-    </div> <!--/ .headline -->
-  <% end %>
-  <% i += 1%>
-<% end %>
 
+<div id="posts">
+  <% i = 0 %>
+  <% @posts.each do |post| %>
+    <% if i > 0 %>
+      <div class="headline post" id="post_<%= post.id %>">
+        <h3><%= link_to post.title, post_path(post.to_param) %></h3>
+        <div class="comment">
+          <a href="/posts/<%= post.to_param %>" title="<%= post.title %>"><%= post.comments.length %></a>
+        </div>
+        <div class="date"><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</div>
+      </div> <!--/ .headline -->
+    <% end %>
+    <% i += 1%>
+  <% end %>
+</div> <!-- /div#posts -->
+<div id="spinner"><%= image_tag("spinner.gif") %> loading...</div>
             
 <div class="ar"><a href="/posts/">READ MORE IN THE ARCHIVES</a></div>    
 </div> <!--/centercol -->
+
+<script type="text/javascript">
+  $('#posts').infiniScroll('pollScroll');
+</script>

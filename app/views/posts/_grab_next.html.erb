@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+  <div class="headline post" id="post_<%= post.id %>">
+    <h3><%= link_to post.title, post_path(post.to_param) %></h3>
+    <div class="comment">
+      <a href="/posts/<%= post.to_param %>" title="<%= post.title %>"><%= post.comments.length %></a>
+    </div>
+    <div class="date"><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</div>
+  </div> <!--/ .headline -->
+<% end %>
