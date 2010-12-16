@@ -1,12 +1,12 @@
 Markholton::Application.routes.draw do
-  devise_for :users
+  
   # map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   #   map.login '/login', :controller => 'sessions', :action => 'new'
   #   map.register '/register', :controller => 'users', :action => 'create'
   #   map.signup '/signup', :controller => 'users', :action => 'new'
   #   
   # map.resources :users, :collection => {:link_user_accounts => :get}
-  resources  :session
+  #resources  :session
   resources :articles
   
   resources :posts do
@@ -23,6 +23,8 @@ Markholton::Application.routes.draw do
   #get 'home/index' #, :controller => 'home', :action => 'index'
   #get '/test', :controller => 'test', :action => 'index'
   match 'about'   => 'about#index'
+  
+  devise_for :users
   
   #map.resource :about
   

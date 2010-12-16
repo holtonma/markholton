@@ -19,5 +19,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   #validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
-  devise :database_authenticatable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  
 end
