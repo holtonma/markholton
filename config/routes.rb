@@ -19,9 +19,9 @@ Markholton::Application.routes.draw do
   end
   
   resources :portfolios
+  resources :codes
   
   #get 'home/index' #, :controller => 'home', :action => 'index'
-  #get '/test', :controller => 'test', :action => 'index'
   match 'about'   => 'about#index'
   
   devise_for :users

@@ -21,6 +21,8 @@
 
   <meta name="generator" content="Mark Holton" />
   <meta name="generator" content="Ruby on Rails" />
+  <meta name="generator" content="Javascript jQuery Prototype" />
+  <meta name="alexaVerifyID" content="RrsobbVoLRJBR-AFrEqtIWDt_nA" />
 </head>
 
 <body>
@@ -40,7 +42,7 @@
         
   	    <%= yield %>
         
-  	    <% unless ["portfolios", "posts", "articles"].include?(controller_name) %>
+  	    <% unless ["portfolios", "posts", "articles", "codes"].include?(controller_name) %>
   	      <%= render "layouts/sidebar" %>
   	    <% end %>
   		  <div class="fix"></div>
