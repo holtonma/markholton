@@ -88,3 +88,9 @@ div#blog_post p{
 }
 div#blog_post p#notice {padding:0;margin:0;}
 div#blog_post p#alert  {padding:0;margin:0;}
+
+section#about_Mark_Holton p{
+  margin-top:10px;
+  font-size:1.1em;
+  text-align:justify;
+}
