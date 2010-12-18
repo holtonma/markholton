@@ -94,3 +94,15 @@ section#about_Mark_Holton p{
   font-size:1.1em;
   text-align:justify;
 }
+
+h2.articles span {
+  font-size: small;
+  text-transform: lowercase;
+  color:gray;
+  float:right;
+}
+
+div#blog_post hr{
+  border-bottom:1px solid silver;
+  margin-top:20px;
+}

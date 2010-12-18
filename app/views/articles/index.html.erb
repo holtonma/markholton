@@ -1,20 +1,20 @@
-<div id="centercol">
+<% if @is_search %>
+<h1>Listing articles Mark Holton posted containing: <b style="color:green;">'<%= params[:q] %>'</b></h1>
+<% else %>
+<h4>articles Mark Holton found interesting</h4>
+<% end %>
 
-  <% if @is_search %>
-  <h1>Listing articles Mark Holton posted containing: <b style="color:green;">'<%= params[:q] %>'</b></h1>
-  <% else %>
-  <h4>Listing articles Mark Holton found interesting</h4>
-  <% end %>
-
+<div id="blog_post">  
   <% @articles.each do |article| %>
-    <h2 class="articles"><a target="_blank" href="<%= article.url %>"><%= article.title %></a></h2>
-    <p>printed:<i><%= distance_of_time_in_words(article.printed_date, Time.now) %> ago</i></p>
-    <p class="article" style="display:inline;">
+    <h2 class="articles">
+      <a target="_blank" href="<%= article.url %>"><%= article.title %></a>
+      <span>printed:<i><%= distance_of_time_in_words(article.printed_date, Time.now) %> ago</i></span>
+    </h2>
+    <p class="article">
       <%= article.content.html_safe %> 
-      <a class="continue" target="_blank" href="<%= article.url %>">...click to continue reading</a>
+      <a class="continue" target="_blank" href="<%= article.url %>">...continue reading</a>
     </p>
-    <p style="border-top: 1px solid #CCC;width:100%;"></p>
+    <hr>
   <% end %>
-
-<%# link_to 'New article', new_article_path %>
+  
 </div>

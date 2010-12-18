@@ -115,9 +115,11 @@ dd {
 /* ...hresume */
 
 a.continue {
-  padding-left:20px;
+  padding-left:10px;
   color: #3A4C5A;
-  display:block;
+  float:right;
+  margin-bottom:10px;
+  font-size:small;
 }
 
 h2.articles a{
