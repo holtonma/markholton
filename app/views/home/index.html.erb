@@ -9,7 +9,7 @@
   <div class="box post">
 	  <div class="comment">
 	    <a href="/posts/<%= @posts.first.id %>" title="Comment on this post">
-	      <%= @posts.first.comments.length %>
+	      talk<%# @posts.first.comments.length %>
 	    </a>
 	  </div>
 	  <h3><%= link_to @posts.first.title, post_path(@posts.first.to_param), :rel => "bookmark" %></h3>
@@ -34,7 +34,7 @@
       <div class="headline post" id="post_<%= post.id %>">
         <h3><%= link_to post.title, post_path(post.to_param) %></h3>
         <div class="comment">
-          <a href="/posts/<%= post.to_param %>" title="<%= post.title %>"><%= post.comments.length %></a>
+          <a href="/posts/<%= post.to_param %>" title="<%= post.title %>">talk</a>
         </div>
         <div class="date"><%= distance_of_time_in_words(post.created_at, Time.now) %> ago</div>
       </div> <!--/ .headline -->
